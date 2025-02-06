@@ -1,35 +1,24 @@
-import React from 'react'
+// Today's Topics: Class Component, Lifecycle methods
 
-// Today's Topic: React JSX, Fragment tag, if-esle statement
-import './App.css'
-import Form from './Component/Form'
-import Button from './Component/Button'
+import React, { Component } from 'react'
+// import Greeting from './Component/Greeting'
+import Counter from './Component/Counter'
+// import Logger from './Component/Logger'
+// import Counter2 from './Component/Counter2'
+import Heading from './Component/Heading'
 
-const App = () => {
-  const x = 5
-  // let text = 'Good bye'
-  // if(x<10){
-  //   text = 'Hello React'
-  // }
-  return (
-    <>
-      <h1>React is {5+5} times better with JSX</h1>
-      <p className='para'>I am a paragrapgh</p>
-      <p className='para'>I am another paragrapgh</p>
-      <input />
-      <br/>
-      <hr/>
+export default class App extends Component {
+  render() {
+    return (
+      <>
+        {/* <Greeting name={'Vikas'}/> */}
+        <Counter/>
+        {/* <Logger/> */}
 
-      {/* <h1>{text}</h1> */}
-
-      {/* Syntax: condition?'true statement':False statement'*/}
-      <h1>{(x<10)?'Hello React':'Good bye'}</h1>
-
-      <Form/>
-      <Button name={'Click me!'}/>
-    </>
-   
-  )
+        {/* <Counter2/> */}
+        <Heading name={'Vikas'}/>
+        <Heading name={'Rohit'}/>
+      </>
+    )
+  }
 }
-
-export default App
