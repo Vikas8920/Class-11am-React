@@ -1,23 +1,23 @@
 import React from 'react'
-import ThemeProvider from './Component/ThemeProvider'
-import ThemeToggle from './Component/ThemeToggle'
-import CounterProvider from './Component/CounterProvider'
-import CounterDisplay from './Component/CounterDisplay'
+import Navbar from './Component/Navbar'
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { CartProvider } from './Context/CartContext'
+import ProductList from './Component/ProductList'
+import Cart from './Component/Cart'
 
 const App = () => {
   return (
-    <>
-      <ThemeProvider>
-        <h1>Theme Toggle</h1>
-        <ThemeToggle/>
-      </ThemeProvider>
-      
-      <hr/>
-      <CounterProvider>
-        <h1>Counter</h1>
-        <CounterDisplay/>
-      </CounterProvider>
-    </>
+      <Router>
+        <CartProvider>
+          <div>
+            <Navbar />
+            <Routes>
+              <Route path='/' element={<ProductList />} />
+              <Route path='/cart' element={<Cart />} />
+            </Routes>
+          </div>
+        </CartProvider>
+      </Router>
   )
 }
 
