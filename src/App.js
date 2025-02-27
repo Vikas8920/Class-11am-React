@@ -1,33 +1,22 @@
-// import React, { useEffect, useRef, useState } from 'react'
 import React from 'react'
-import AuthProvider from './Component/AuthProvider'
-import Login from './Component/Login'
-import UserProfile from './Component/UserProfile'
-// import Counter from './Component/Counter'
+import ThemeProvider from './Component/ThemeProvider'
+import ThemeToggle from './Component/ThemeToggle'
+import CounterProvider from './Component/CounterProvider'
+import CounterDisplay from './Component/CounterDisplay'
 
 const App = () => {
-  // const [inputValue, setInputValue] = useState('')
-
-  // const previousInputValue = useRef('')
-
-  // useEffect(()=>{
-  //   previousInputValue.current = inputValue
-  // }, [inputValue])
   return (
     <>
-      {/* <input type='text' value={inputValue} onChange={(e)=>setInputValue(e.target.value)}/>
-      <h1>Current Value: {inputValue}</h1>
-      <h1>Previous Value: {previousInputValue.current}</h1>
-
+      <ThemeProvider>
+        <h1>Theme Toggle</h1>
+        <ThemeToggle/>
+      </ThemeProvider>
+      
       <hr/>
-
-      <Counter/> */}
-
-      <AuthProvider>
-        <h1>Simple Authentication System</h1>
-        <Login/>
-        <UserProfile/>
-      </AuthProvider>
+      <CounterProvider>
+        <h1>Counter</h1>
+        <CounterDisplay/>
+      </CounterProvider>
     </>
   )
 }
