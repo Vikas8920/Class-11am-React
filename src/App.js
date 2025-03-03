@@ -1,23 +1,20 @@
 import React from 'react'
-import Navbar from './Component/Navbar'
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { CartProvider } from './Context/CartContext'
-import ProductList from './Component/ProductList'
-import Cart from './Component/Cart'
+import { FormProvider } from './Context/FormContext'
+import FormComponent from './Component/FormComponent'
+import DisplayData from './Component/DisplayData'
+import './App.css'
 
 const App = () => {
   return (
-      <Router>
-        <CartProvider>
-          <div>
-            <Navbar />
-            <Routes>
-              <Route path='/' element={<ProductList />} />
-              <Route path='/cart' element={<Cart />} />
-            </Routes>
-          </div>
-        </CartProvider>
-      </Router>
+    <>
+      <FormProvider>
+        <div className='app'>
+          <h1>Form with React Context</h1>
+          <FormComponent/>
+          <DisplayData/>
+        </div>
+      </FormProvider>
+    </>
   )
 }
 
